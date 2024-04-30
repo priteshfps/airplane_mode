@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PR-{YY}-{MM}-{####}",
+ "creation": "2024-05-13 16:56:04.484204",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "payment_receipt_date",
+  "contract_invoice",
+  "amount",
+  "column_break_huxb",
+  "shop",
+  "tenant",
+  "amount_in_words"
+ ],
+ "fields": [
+  {
+   "fieldname": "payment_receipt_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Payment Receipt Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contract_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Contract Invoice",
+   "options": "Contract Invoice",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "contract_invoice.shop",
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Airport Shop",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract_invoice.tenant",
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "label": "Tenant",
+   "options": "Tenant",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contract_invoice.amount",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_huxb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount_in_words",
+   "fieldtype": "Data",
+   "label": "Amount in Words",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-15 15:48:15.311826",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Payment Receipt",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

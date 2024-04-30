@@ -1,0 +1,27 @@
+ 
+<!-- this is a sample default list template -->
+<div class="card" style="padding: 5px;margin: 5px;width:98%; border-radius: 10px; overflow: hidden;display: table;clear: both;">
+	<div  style=" float: left;  vertical-align: middle;text-align: center;">
+	 {% if doc.image %}
+	  <img src="{{doc.image}}" style="width: 80px;height: 80px;"> 
+	 {%else%}
+	  <img src="/files/airport%20shop%20default%20image.jpeg" style="width: 80px;height: 80px;"> 
+	 {%endif%}
+	 </div>
+		<div style="float: left;width:85%;  "><div style="padding: 10px;width: 90%;font-size: 12px; font-size:small;">
+		
+			<div style="font-size:medium;font-weight: bold;" >
+			   
+				{{doc.title or doc.name}}           
+			   </div>
+			<div style="font-weight:bold;margin-bottom: 8px;font-size: 10px;color: #999;" > {{doc.airport}}   </div>
+			<div style="font-weight:bold;margin-bottom: 8px;font-size: 10px;color: #999;" > Shop No. : {{doc.shop_no}}   </div>
+		   
+		   
+			 
+		  <a href="{{ doc.route }}" style="color: #0f6bff;
+		 font-weight: 500;">View Shop details</a>
+		 </div></div>
+	
+	 
+ </div>

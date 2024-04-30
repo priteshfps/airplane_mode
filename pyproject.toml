@@ -1,9 +1,15 @@
 [project]
 name = "airplane_mode"
 authors = [
+<<<<<<< HEAD
     { name = "air", email = "aa@airplane.com"}
 ]
 description = "Airplane"
+=======
+    { name = "airplane_mode", email = "info@airplane.com"}
+]
+description = "airplane_mode"
+>>>>>>> b496bde (feat: Initialize App)
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

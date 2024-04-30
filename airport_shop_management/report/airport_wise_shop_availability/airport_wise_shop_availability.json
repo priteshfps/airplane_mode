@@ -1,0 +1,47 @@
+{
+ "add_total_row": 0,
+ "columns": [
+  {
+   "fieldname": "Airport",
+   "fieldtype": "Link",
+   "label": "Airport",
+   "options": "Airplane Ticket Add-on Type",
+   "width": 300
+  },
+  {
+   "fieldname": "Available",
+   "fieldtype": "Int",
+   "label": "Available",
+   "width": 200
+  },
+  {
+   "fieldname": "Occupied",
+   "fieldtype": "Int",
+   "label": "Occupied",
+   "width": 0
+  }
+ ],
+ "creation": "2024-05-14 16:04:34.351235",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-05-14 16:07:40.032905",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Airport wise Shop availability",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select `tabAirport Shop`.airport as 'Airport', count(CASE WHEN is_available = 1  then 1\n \nEND)  as 'Available', count(CASE WHEN is_available = 0  then 1\n \nEND)  as 'Occupied' from `tabAirport Shop` \ngroup by  `tabAirport Shop`.airport ;",
+ "ref_doctype": "Airport Shop",
+ "report_name": "Airport wise Shop availability",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

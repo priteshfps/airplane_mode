@@ -1,0 +1,36 @@
+{% extends "templates/web.html" %}
+<!-- add-breadcrumbs -->
+{% block page_content %}
+<div style="font-size: 25px;">{{ title }}</div>
+
+<div style="font-size: 20px;
+margin-top: 12px;"> Shop Details</div>
+<div  style="padding: 5px;margin: 5px;width:98%; border-radius: 10px; overflow: hidden;display: table;clear: both;">
+	<div  style=" float: left;  vertical-align: middle;text-align: center;">
+	 {% if doc.image %}
+	  <img src="{{doc.image}}" style="width: 80px;height: 80px;"> 
+	 {%else%}
+	  <img src="/files/airport%20shop%20default%20image.jpeg" style="width: 80px;height: 80px;"> 
+	 {%endif%}
+	 </div>
+		<div style="float: left;width:85%;  "> 
+<ul style="color: #999;font-size: 16px;"> 
+  {% set value = frappe.db.get_single_value("Global Configuration", "default_rent") %}
+
+    <li>{{doc.airport_code}} - {{doc.airport}}  </li>
+    <li> Shop No. : {{doc.shop_no}}  </li>
+    <li> Shop Location : {{doc.location}}  </li> 
+    <li> Shop Area : {{doc.area}}  </li>
+    <li> Shop Carpet Area (SQ Ft) : {{doc.carpet_area}}  </li>
+    <li> Floor : {{doc.floor}} </li>
+    <li> Rent Amount (Per Month) : {{value}} </li>
+ 
+  </ul>  
+  <a href="/shop-contract/new?shop={{name}}&rent_amount={{value}}" class="btn btn-primary"
+   style="box-sizing: border-box;height: 40px;padding-left: 12px;padding-right: 12px;padding-top: 8px; font-size: 14px;
+   font-weight: 600;background-color: #0f6bff;border-radius: 8px;">Book Shop
+  </a>
+  </div>
+ 
+{% endblock %}
+ 
