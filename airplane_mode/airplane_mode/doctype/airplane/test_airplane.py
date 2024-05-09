@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestAirPlane(FrappeTestCase):
+class TestAirplane(FrappeTestCase):
 	pass

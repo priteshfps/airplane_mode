@@ -2,7 +2,7 @@
    <div style="padding: 10px;width: 90%;font-size: 12px; font-size:small;">
      
       <div style="font-size:medium;font-weight: bold;" >
-         {% set docairplane = frappe.get_doc('AirPlane',doc.airplane) %}
+         {% set docairplane = frappe.get_doc('Airplane',doc.airplane) %}
           {{docairplane.airline}}           
          </div>
       <div style="font-weight:bold;margin-bottom: 8px;font-size: 10px;color: #999;" > {{doc.source_airport_code}} -> {{doc.destination_airport_code}} </div>

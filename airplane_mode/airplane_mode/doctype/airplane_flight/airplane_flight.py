@@ -12,4 +12,10 @@ class AirplaneFlight(WebsiteGenerator):
 		context.no_cache = 1
 
 		context.parents = [dict(route='/flights',label='Flights')]
+	def on_submit(self):
+		self.status = "Completed"
+
+
+
 	pass
+	

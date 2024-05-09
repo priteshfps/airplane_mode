@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class AirPlane(Document):
+class Airplane(Document):
 	pass

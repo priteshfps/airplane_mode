@@ -22,7 +22,8 @@
   "date_of_departure",
   "duration",
   "column_break_wosg",
-  "time_of_departure"
+  "time_of_departure",
+  "amended_from"
  ],
  "fields": [
   {
@@ -30,7 +31,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Airplane",
-   "options": "AirPlane",
+   "options": "Airplane",
    "reqd": 1
   },
   {
@@ -121,18 +122,29 @@
    "fieldname": "is_available",
    "fieldtype": "Check",
    "label": "is Available"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Airplane Flight",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "is_published_field": "is_available",
+ "is_submittable": 1,
  "links": [
   {
    "link_doctype": "Airplane Ticket",
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-04-25 11:52:36.463267",
+ "modified": "2024-05-08 14:13:27.098688",
  "modified_by": "Administrator",
  "module": "Airplane mode",
  "name": "Airplane Flight",

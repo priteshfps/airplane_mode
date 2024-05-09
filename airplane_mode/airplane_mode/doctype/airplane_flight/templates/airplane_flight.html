@@ -5,7 +5,7 @@
 
 <h4> Flight Details</h4>
 <ul style="color: #999;font-size: 14px;">
-    <li>{% set docairplane = frappe.get_doc('AirPlane',doc.airplane) %}
+    <li>{% set docairplane = frappe.get_doc('Airplane',doc.airplane) %}
         Airline: {{docairplane.airline}}  </li>
     <li>{{doc.source_airport_code}} -> {{doc.destination_airport_code}}</li>
     <li>{{frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }} |  {{doc.time_of_departure}} </li>

@@ -24,7 +24,7 @@ class AirplaneTicket(Document):
 	
 	def validate(self):	 
 		docplane  = frappe.get_doc("Airplane Flight", self.flight)
-		docairplane = frappe.get_doc("AirPlane",docplane.airplane)
+		docairplane = frappe.get_doc("Airplane",docplane.airplane)
 		capacity = docairplane.capacity
 		#frappe.throw(capacity)
 		#doctickets  = frappe.get_doc("Airplane Ticket", self.flight)
@@ -38,10 +38,10 @@ class AirplaneTicket(Document):
 	def before_submit(self):
 		if (self.status != "Boarded"):
 			frappe.throw("you can not submit ticket, ticket status must be boarded.")
-	def on_submit(self):
-		doc = frappe.get_doc("Airplane Flight", self.flight)
-		doc.status = "Completed"
-		doc.save() 
+	# def on_submit(self):
+	# 	docflight = frappe.get_doc("Airplane Flight", self.flight)
+	# 	docflight.status = "Completed"
+	# 	docflight.save()
 
 	# validate: function(frm,cdt,cdn) {
 		

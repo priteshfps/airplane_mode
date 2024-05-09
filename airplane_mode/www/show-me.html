@@ -1,7 +1,2 @@
-<div style="height: 200px;width: 350px;background-color:
-{% if( frappe.form_dict.color )%}
-{{frappe.form_dict.color}}
-{% else %}
-black
-{%endif%}
-;"></div>
+<div style="background-color:{%if(frappe.form_dict.color)%} {{ frappe.form_dict.color }} {%else%} black {%endif%};height:200px;width:350px;" >
+</div>
