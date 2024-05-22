@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "autoname": "prompt",
  "creation": "2024-04-16 16:52:33.582993",
  "doctype": "DocType",
@@ -39,7 +40,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-25 11:46:40.387160",
+ "modified": "2024-05-14 15:38:20.066186",
  "modified_by": "Administrator",
  "module": "Airplane mode",
  "name": "Airport",

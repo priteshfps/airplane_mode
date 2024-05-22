@@ -12,6 +12,8 @@
   "route",
   "column_break_snpu",
   "status",
+  "section_break_lgsm",
+  "crew_members",
   "airport_details_section",
   "source_airport",
   "source_airport_code",
@@ -21,6 +23,7 @@
   "departure_details_section",
   "date_of_departure",
   "duration",
+  "gate_no",
   "column_break_wosg",
   "time_of_departure",
   "amended_from"
@@ -132,6 +135,21 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "section_break_lgsm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "crew_members",
+   "fieldtype": "Table",
+   "label": "Crew Members",
+   "options": "Crew Member"
+  },
+  {
+   "fieldname": "gate_no",
+   "fieldtype": "Data",
+   "label": "Gate No"
   }
  ],
  "has_web_view": 1,
@@ -144,7 +162,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-05-08 14:13:27.098688",
+ "modified": "2024-05-22 14:24:45.252033",
  "modified_by": "Administrator",
  "module": "Airplane mode",
  "name": "Airplane Flight",

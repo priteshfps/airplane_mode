@@ -14,7 +14,7 @@ class AirplaneTicket(Document):
 
 	def before_save(self):
 	  #pass
-	 self.set_total_amount()
+		self.set_total_amount()
 		
 	def set_total_amount(self):
 		total_amount = self.flight_price
@@ -26,8 +26,7 @@ class AirplaneTicket(Document):
 		docplane  = frappe.get_doc("Airplane Flight", self.flight)
 		docairplane = frappe.get_doc("Airplane",docplane.airplane)
 		capacity = docairplane.capacity
-		#frappe.throw(capacity)
-		#doctickets  = frappe.get_doc("Airplane Ticket", self.flight)
+		
 		ticketcount = frappe.db.count("Airplane Ticket", filters={'flight': self.flight})
 		if(capacity <= ticketcount):
 			frappe.throw("flight exceed the number of seats")
@@ -38,34 +37,7 @@ class AirplaneTicket(Document):
 	def before_submit(self):
 		if (self.status != "Boarded"):
 			frappe.throw("you can not submit ticket, ticket status must be boarded.")
-	# def on_submit(self):
-	# 	docflight = frappe.get_doc("Airplane Flight", self.flight)
-	# 	docflight.status = "Completed"
-	# 	docflight.save()
-
-	# validate: function(frm,cdt,cdn) {
-		
-		
-	# 	var a = [];
-	# 	$.each(frm.doc.table_2, function(index, source_row){
-
 	
-	# 		globalThis.add_child = frm.add_child("neww");
-	# 		globalThis.Blockno = "";
-	# 		if(source_row.check_6 == true){
-	# 			a.push(source_row.q_block_no + ",");
-				
-	# 		}
-	# 		a.forEach(hello);
-	# 		function hello(va){
-	# 			Blockno += va  
-			
-	# 		}
-
-	# 	})
-	# 	add_child.q_block_no = Blockno;
-
-	# },
 
 	def set_validate_for_add_ons(self):
 		vadd_ons = []

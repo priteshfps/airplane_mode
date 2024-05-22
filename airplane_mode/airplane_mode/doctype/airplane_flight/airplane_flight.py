@@ -12,6 +12,18 @@ class AirplaneFlight(WebsiteGenerator):
 		context.no_cache = 1
 
 		context.parents = [dict(route='/flights',label='Flights')]
+	def on_update(self):
+		
+		if(self.has_value_changed("gate_no") ):
+			
+			airplanetickets = frappe.get_all('Airplane Ticket', 'name',
+			dict(flight=self.name ) )
+			
+			for airticket in airplanetickets:
+				frappe.db.set_value("Airplane Ticket", airticket.name, "gate_no", self.gate_no)
+				
+			frappe.db.commit()
+				
 	def on_submit(self):
 		self.status = "Completed"
 

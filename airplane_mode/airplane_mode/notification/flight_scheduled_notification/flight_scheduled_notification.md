@@ -1,1 +1,0 @@
-your flight is scheduled and departs in 24 hours
