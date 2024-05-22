@@ -1,6 +1,2 @@
-<<<<<<< Updated upstream
-airplane_mode
-=======
 Airplane mode
 Airport Shop Management
->>>>>>> Stashed changes
