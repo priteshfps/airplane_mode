@@ -1,0 +1,21 @@
+<div class="card" style="padding: 5px;margin: 5px;width:98%; border-radius: 10px; overflow: hidden;">
+	<div style="padding: 10px;width: 90%;font-size: 12px; font-size:small;">
+	  
+	   <div style="font-size:medium;font-weight: bold;" >
+		  {% set docairplane = frappe.get_doc('Airplane',doc.airplane) %}
+		   {{docairplane.airline}}           
+		  </div>
+	   <div style="font-weight:bold;margin-bottom: 8px;font-size: 10px;color: #999;" > {{doc.source_airport_code}} -> {{doc.destination_airport_code}} </div>
+	  
+	   <div style="margin-bottom: 12px;"> {{frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }} |  {{doc.time_of_departure}}  |  {{frappe.utils.format_duration(doc.duration)}} </div>
+		
+	 <a href="{{ doc.route }}" style="color: #0f6bff;
+	font-weight: 500;">View Flight</a>
+	</div>
+	 
+ </div>
+ <!-- this is a sample default list template 
+ 
+ { set docairplane = frappe.get_doc('airplane',doc.airplane)}
+ -->
+ 
